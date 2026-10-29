@@ -12,7 +12,7 @@ import jakarta.ws.rs.core.MediaType;
 public class IndexResource {
 
     @Inject
-    Template index; // Injecte automatiquement src/main/resources/templates/index.html
+    Template index;
 
     @GET
     @Produces(MediaType.TEXT_HTML)

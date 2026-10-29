@@ -1,0 +1,57 @@
+{@java.util.List<com.example.Book> books}
+    
+<DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des livres</title>
+    {#bundle /}
+</head>
+
+<body class="bg-slate-100 min-h-screen text-slate-800 font-sans antialiased">
+
+    <div class="max-w-4xl mx-auto px-4 py-10">
+
+        <header class="flex justify-between items-center mb-8 pb-4">
+            <div>
+                <h1 class="text-3xl font-bold text-slate-900">Ma Bibliothèque</h1>
+                <p class="text-sm mt-1">Gérez vos livres enregistrés dans Quarkus</p>
+            </div>
+            <a href="/"
+                class="text-sm font-medium text-white hover:text-white transition px-4 py-2 rounded bg-blue-500">
+                Retour à l'accueil
+            </a>
+        </header>
+
+        <main>
+            <div class="p-1">
+                <ul class="divide-y divide-slate-100 space-y-2">
+                    {#for book in books}
+                    <li
+                        class="p-5 hover:bg-slate-50 transition flex items-center justify-between bg-white shadow-sm rounded border border-slate-200 overflow-hidden">
+                        <div>
+                            <h2 class="text-lg font-semibold text-slate-900">{book.title}</h2>
+                            <p class="text-sm text-slate-600 mt-0.5">Par <span class="font-medium">{book.author}</span>
+                            </p>
+                        </div>
+                        <span
+                            class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-indigo-50 text-indigo-700 border border-indigo-100">
+                            {book.pages} pages
+                        </span>
+                    </li>
+                    {#else}
+                    <li class="p-8 text-center text-slate-500">
+                        <p class="text-base font-medium">Aucun livre trouvé dans la bibliothèque.</p>
+                        <p class="text-sm mt-1 text-slate-400">Ajoutez-en un depuis l'API ou le formulaire !</p>
+                    </li>
+                    {/for}
+                </ul>
+            </div>
+        </main>
+    </div>
+
+</body>
+
+</html>

@@ -1,5 +1,10 @@
 # Changelog
 
+## 29/10/2026
+- finalisation de l'affichage
+- ajout de tailwind css
+
+
 ## 21/10/2026
 
 - initial commit
